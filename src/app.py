@@ -64,7 +64,7 @@ def process_input():
         df = dp.readCsv(path, session)
         return jsonify({'result': 'success'})
     except Exception as e:
-        return jsonify({'result': 'failure', 'error': f'File {input_data} Not Found in Data Folder!'})
+        return jsonify({'result': 'failure', 'error': f"File {input_data} Not Found in Data Folder!"})
 
 
 @app.route('/get_target', methods=['POST'])
@@ -82,7 +82,7 @@ def get_target():
         elif target == '':
             return jsonify({'result': 'failure', 'error': 'Target Column is Blank!'})
         else:
-            return jsonify({'result': 'failure', 'error': f'No Target column named {target}'})
+            return jsonify({'result': 'failure', 'error': f"No Target column named {target}"})
     except Exception:
         return jsonify({'result': 'failure', 'error': 'No Dataset Uploaded!'})
 
