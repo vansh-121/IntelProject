@@ -193,13 +193,11 @@ class KnowledgeRepresentation:
             if target_is_numeric:
                 sns.scatterplot(x=target, y=col, data=dataframe,
                                 ax=axs[row_idx, col_idx])
-                axs[row_idx, col_idx].set_title(
-                    f"Scatter Plot of {col} by {target}')
+                axs[row_idx, col_idx].set_title(f"Scatter Plot of {col} by {target}")
             else:
                 sns.stripplot(x=target, y=col, data=dataframe,
                             ax=axs[row_idx, col_idx])
-                axs[row_idx, col_idx].set_title(
-                    f"Strip Plot of {col} by {target}')
+                axs[row_idx, col_idx].set_title(f"Strip Plot of {col} by {target}")
             axs[row_idx, col_idx].set_xlabel(target)
             axs[row_idx, col_idx].set_ylabel(col)
             plt.setp(
@@ -236,14 +234,12 @@ class KnowledgeRepresentation:
             if target_is_numeric:
                 sns.stripplot(x=col, y=target, data=dataframe,
                             ax=axs[row_idx, col_idx])
-                axs[row_idx, col_idx].set_title(
-                    f"Strip Plot of {target} by {col}')
+                axs[row_idx, col_idx].set_title(f"Strip Plot of {target} by {col}")
             else:
                 counts = dataframe.groupby(
                     [target, col]).size().unstack().fillna(0)
                 counts.plot(kind='bar', stacked=True, ax=axs[row_idx, col_idx])
-                axs[row_idx, col_idx].set_title(
-                    f"Stacked Bar Plot of {col} by {target}')
+                axs[row_idx, col_idx].set_title(f"Stacked Bar Plot of {col} by {target}")
                 axs[row_idx, col_idx].set_xlabel(target)
                 axs[row_idx, col_idx].set_ylabel('Count')
                 plt.setp(
