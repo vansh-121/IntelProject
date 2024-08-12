@@ -7,7 +7,6 @@ from PatternIdentification_and_InsightGeneration import InsightGeneration
 app = Flask(__name__)
 
 session = SparkSession.builder.appName("Dataset Analysis").getOrCreate()
-
 dp = DataPreprocessing()
 kr = KnowledgeRepresentation()
 ig = InsightGeneration()
